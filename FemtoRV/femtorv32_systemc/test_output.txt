@@ -1,0 +1,3296 @@
+
+        SystemC 3.0.2-Accellera --- Sep 22 2025 09:23:44
+        Copyright (c) 1996-2025 by all Contributors,
+        ALL RIGHTS RESERVED
+FemtoRV32 Quark SystemC Assembly Instruction Test Suite
+=====================================================
+🔍 Running: Comprehensive RV32I Test
+📝 Description: Complete RISC-V RV32I instruction set test with all major instruction types
+📝 Loading program into memory:
+  Address 0x0: 0x00500093
+  Address 0x4: 0x00300113
+  Address 0x8: 0x00a00193
+  Address 0xc: 0x002081b3
+  Address 0x10: 0x402081b3
+  Address 0x14: 0x0020f1b3
+  Address 0x18: 0x0020e1b3
+  Address 0x1c: 0x0020c1b3
+  Address 0x20: 0x00a0a193
+  Address 0x24: 0x00a0b193
+  Address 0x28: 0x00a0c193
+  Address 0x2c: 0x00a0e193
+  Address 0x30: 0x00a0f193
+  Address 0x34: 0x00708093
+  Address 0x38: 0xfff10113
+  Address 0x3c: 0x00118193
+  Address 0x40: 0x00c0a193
+  Address 0x44: 0x00d0a193
+  Address 0x48: 0x00b0b193
+  Address 0x4c: 0x00d0b193
+  Address 0x50: 0x00f0c193
+  Address 0x54: 0x00f0e193
+  Address 0x58: 0x00f0f193
+  Address 0x5c: 0x00109193
+  Address 0x60: 0x0010d193
+  Address 0x64: 0x4010d193
+  Address 0x68: 0x002091b3
+  Address 0x6c: 0x0020d1b3
+  Address 0x70: 0x4020d1b3
+  Address 0x74: 0x0020a1b3
+  Address 0x78: 0x0020b1b3
+  Address 0x7c: 0x0010a1b3
+  Address 0x80: 0x0020a1b3
+  Address 0x84: 0x0010b1b3
+  Address 0x88: 0x0020b1b3
+  Address 0x8c: 0x00a0a193
+  Address 0x90: 0x0030a193
+  Address 0x94: 0x00a0b193
+  Address 0x98: 0x0030b193
+  Address 0x9c: 0x123450b7
+  Address 0xa0: 0x00008097
+  Address 0xa4: 0x123456b7
+  Address 0xa8: 0x67808093
+  Address 0xac: 0x00008293
+  Address 0xb0: 0x0000006f
+🚀 Initial CPU State:
+=== CPU State ===
+PC: 0x00000000
+x1: 0x00000000
+x2: 0x00000000
+x3: 0x00000000
+x4: 0x00000000
+x5: 0x00000000
+
+🔄 Starting simulation with real-time validation for 1500 cycles...
+  🔄 Clock process: reset=0
+  🔄 Clock process: IN RESET
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x0)
+  Cycle 0: PC=0x00000000, x1=0x00000000, x2=0x00000000, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0x0 → mem_addr=0x0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x0)
+  📖 Memory read: addr=0x00000000 (word=0), data=0x00500093
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x0
+  🔍 DECODE: mem_rdata=0x500093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=0, rs2Id=5
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x0 → mem_addr=0x0
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x0
+  🔍 DECODE: mem_rdata=0x500093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=0, rs2Id=5
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x0 → mem_addr=0x0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x0)
+  Cycle 10: PC=0x00000000, x1=0x00000000, x2=0x00000000, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x4)
+⏳ Waiting for ADDI writeback to complete...
+🔍 Validating instruction at PC=0x4 (after completion, aluBusy=0):
+  ✅ [0] ADDI: addi x1, x0, 5 -> x1 = 5
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4 → mem_addr=0x4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x4)
+  📖 Memory read: addr=0x00000004 (word=1), data=0x00300113
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x4
+  🔍 DECODE: mem_rdata=0x300113
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=2, rs1Id=0, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x4
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4 → mem_addr=0x4
+  Cycle 20: PC=0x00000004, x1=0x00000005, x2=0x00000000, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x4
+  🔍 DECODE: mem_rdata=0x300113
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=2, rs1Id=0, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4 → mem_addr=0x4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x4)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x4
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x8)
+⏳ Waiting for ADDI writeback to complete...
+  Cycle 30: PC=0x00000008, x1=0x00000005, x2=0x00000003, x3=0x00000000
+🔍 Validating instruction at PC=0x8 (after completion, aluBusy=0):
+  ✅ [1] ADDI: addi x2, x0, 3 -> x2 = 3
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8 → mem_addr=0x8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x8)
+  📖 Memory read: addr=0x00000008 (word=2), data=0x00a00193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x8
+  🔍 DECODE: mem_rdata=0xa00193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=0, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x8
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8 → mem_addr=0x8
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x8
+  🔍 DECODE: mem_rdata=0xa00193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=0, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8 → mem_addr=0x8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x8)
+  Cycle 40: PC=0x00000008, x1=0x00000005, x2=0x00000003, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x8
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xc
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xc)
+⏳ Waiting for ADDI writeback to complete...
+🔍 Validating instruction at PC=0xc (after completion, aluBusy=0):
+  ✅ [2] ADDI: addi x3, x0, 10 -> x3 = 10
+  🔍 MEM_ADDR: Instruction fetch, PC=0xc → mem_addr=0xc
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xc)
+  📖 Memory read: addr=0x0000000c (word=3), data=0x002081b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xc
+  🔍 DECODE: mem_rdata=0x2081b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xc
+  🔍 MEM_ADDR: Instruction fetch, PC=0xc → mem_addr=0xc
+  Cycle 50: PC=0x0000000c, x1=0x00000005, x2=0x00000003, x3=0x0000000a
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xc
+  🔍 DECODE: mem_rdata=0x2081b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xc → mem_addr=0xc
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xc)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xc
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x10
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x10)
+⏳ Waiting for ADD writeback to complete...
+  Cycle 60: PC=0x00000010, x1=0x00000005, x2=0x00000003, x3=0x00000008
+🔍 Validating instruction at PC=0x10 (after completion, aluBusy=0):
+  ✅ [3] ADD: add x3, x1, x2 -> x3 = 8 (5+3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x10 → mem_addr=0x10
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x10)
+  📖 Memory read: addr=0x00000010 (word=4), data=0x402081b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x10
+  🔍 DECODE: mem_rdata=0x402081b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x10
+  🔍 MEM_ADDR: Instruction fetch, PC=0x10 → mem_addr=0x10
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x10
+  🔍 DECODE: mem_rdata=0x402081b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x10 → mem_addr=0x10
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x10)
+  Cycle 70: PC=0x00000010, x1=0x00000005, x2=0x00000003, x3=0x00000008
+  🔍 PC UPDATE: state=EXECUTE, PC=0x10
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x14
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x14)
+⏳ Waiting for SUB writeback to complete...
+🔍 Validating instruction at PC=0x14 (after completion, aluBusy=0):
+  ✅ [4] SUB: sub x3, x1, x2 -> x3 = 2 (5-3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x14 → mem_addr=0x14
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x14)
+  📖 Memory read: addr=0x00000014 (word=5), data=0x0020f1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x14
+  🔍 DECODE: mem_rdata=0x20f1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x14
+  🔍 MEM_ADDR: Instruction fetch, PC=0x14 → mem_addr=0x14
+  Cycle 80: PC=0x00000014, x1=0x00000005, x2=0x00000003, x3=0x00000002
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x14
+  🔍 DECODE: mem_rdata=0x20f1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x14 → mem_addr=0x14
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x14)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x14
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x18
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x18)
+⏳ Waiting for AND writeback to complete...
+  Cycle 90: PC=0x00000018, x1=0x00000005, x2=0x00000003, x3=0x00000001
+🔍 Validating instruction at PC=0x18 (after completion, aluBusy=0):
+  ✅ [5] AND: and x3, x1, x2 -> x3 = 1 (5&3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x18 → mem_addr=0x18
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x18)
+  📖 Memory read: addr=0x00000018 (word=6), data=0x0020e1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x18
+  🔍 DECODE: mem_rdata=0x20e1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x18
+  🔍 MEM_ADDR: Instruction fetch, PC=0x18 → mem_addr=0x18
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x18
+  🔍 DECODE: mem_rdata=0x20e1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x18 → mem_addr=0x18
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x18)
+  Cycle 100: PC=0x00000018, x1=0x00000005, x2=0x00000003, x3=0x00000001
+  🔍 PC UPDATE: state=EXECUTE, PC=0x18
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x1c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x1c)
+⏳ Waiting for OR writeback to complete...
+🔍 Validating instruction at PC=0x1c (after completion, aluBusy=0):
+  ✅ [6] OR: or x3, x1, x2 -> x3 = 7 (5|3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x1c → mem_addr=0x1c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x1c)
+  📖 Memory read: addr=0x0000001c (word=7), data=0x0020c1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x1c
+  🔍 DECODE: mem_rdata=0x20c1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x1c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x1c → mem_addr=0x1c
+  Cycle 110: PC=0x0000001c, x1=0x00000005, x2=0x00000003, x3=0x00000007
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x1c
+  🔍 DECODE: mem_rdata=0x20c1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x1c → mem_addr=0x1c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x1c)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x1c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x20
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x20)
+⏳ Waiting for XOR writeback to complete...
+  Cycle 120: PC=0x00000020, x1=0x00000005, x2=0x00000003, x3=0x00000006
+🔍 Validating instruction at PC=0x20 (after completion, aluBusy=0):
+  ✅ [7] XOR: xor x3, x1, x2 -> x3 = 6 (5^3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x20 → mem_addr=0x20
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x20)
+  📖 Memory read: addr=0x00000020 (word=8), data=0x00a0a193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x20
+  🔍 DECODE: mem_rdata=0xa0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x20
+  🔍 MEM_ADDR: Instruction fetch, PC=0x20 → mem_addr=0x20
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x20
+  🔍 DECODE: mem_rdata=0xa0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x20 → mem_addr=0x20
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x20)
+  Cycle 130: PC=0x00000020, x1=0x00000005, x2=0x00000003, x3=0x00000006
+  🔍 PC UPDATE: state=EXECUTE, PC=0x20
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x24
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x24)
+⏳ Waiting for SLTI writeback to complete...
+🔍 Validating instruction at PC=0x24 (after completion, aluBusy=0):
+  ✅ [8] SLTI: slti x3, x1, 10 -> x3 = 1 (5<10)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x24 → mem_addr=0x24
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x24)
+  📖 Memory read: addr=0x00000024 (word=9), data=0x00a0b193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x24
+  🔍 DECODE: mem_rdata=0xa0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x24
+  🔍 MEM_ADDR: Instruction fetch, PC=0x24 → mem_addr=0x24
+  Cycle 140: PC=0x00000024, x1=0x00000005, x2=0x00000003, x3=0x00000001
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x24
+  🔍 DECODE: mem_rdata=0xa0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x24 → mem_addr=0x24
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x24)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x24
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x28
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x28)
+⏳ Waiting for SLTIU writeback to complete...
+  Cycle 150: PC=0x00000028, x1=0x00000005, x2=0x00000003, x3=0x00000001
+🔍 Validating instruction at PC=0x28 (after completion, aluBusy=0):
+  ✅ [9] SLTIU: sltiu x3, x1, 10 -> x3 = 1 (5<10 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x28 → mem_addr=0x28
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x28)
+  📖 Memory read: addr=0x00000028 (word=10), data=0x00a0c193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x28
+  🔍 DECODE: mem_rdata=0xa0c193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x28
+  🔍 MEM_ADDR: Instruction fetch, PC=0x28 → mem_addr=0x28
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x28
+  🔍 DECODE: mem_rdata=0xa0c193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x28 → mem_addr=0x28
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x28)
+  Cycle 160: PC=0x00000028, x1=0x00000005, x2=0x00000003, x3=0x00000001
+  🔍 PC UPDATE: state=EXECUTE, PC=0x28
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x2c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x2c)
+⏳ Waiting for XORI writeback to complete...
+🔍 Validating instruction at PC=0x2c (after completion, aluBusy=0):
+  ✅ [10] XORI: xori x3, x1, 10 -> x3 = 15 (5^10)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x2c → mem_addr=0x2c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x2c)
+  📖 Memory read: addr=0x0000002c (word=11), data=0x00a0e193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x2c
+  🔍 DECODE: mem_rdata=0xa0e193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x2c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x2c → mem_addr=0x2c
+  Cycle 170: PC=0x0000002c, x1=0x00000005, x2=0x00000003, x3=0x0000000f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x2c
+  🔍 DECODE: mem_rdata=0xa0e193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x2c → mem_addr=0x2c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x2c)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x2c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x30
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x30)
+⏳ Waiting for ORI writeback to complete...
+  Cycle 180: PC=0x00000030, x1=0x00000005, x2=0x00000003, x3=0x0000000f
+🔍 Validating instruction at PC=0x30 (after completion, aluBusy=0):
+  ✅ [11] ORI: ori x3, x1, 10 -> x3 = 15 (5|10)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x30 → mem_addr=0x30
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x30)
+  📖 Memory read: addr=0x00000030 (word=12), data=0x00a0f193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x30
+  🔍 DECODE: mem_rdata=0xa0f193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x30
+  🔍 MEM_ADDR: Instruction fetch, PC=0x30 → mem_addr=0x30
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x30
+  🔍 DECODE: mem_rdata=0xa0f193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x30 → mem_addr=0x30
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x30)
+  Cycle 190: PC=0x00000030, x1=0x00000005, x2=0x00000003, x3=0x0000000f
+  🔍 PC UPDATE: state=EXECUTE, PC=0x30
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x34
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x34)
+⏳ Waiting for ANDI writeback to complete...
+🔍 Validating instruction at PC=0x34 (after completion, aluBusy=0):
+  ✅ [12] ANDI: andi x3, x1, 10 -> x3 = 0 (5&10)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x34 → mem_addr=0x34
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x34)
+  📖 Memory read: addr=0x00000034 (word=13), data=0x00708093
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x34
+  🔍 DECODE: mem_rdata=0x708093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=7
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x34
+  🔍 MEM_ADDR: Instruction fetch, PC=0x34 → mem_addr=0x34
+  Cycle 200: PC=0x00000034, x1=0x00000005, x2=0x00000003, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x34
+  🔍 DECODE: mem_rdata=0x708093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=7
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x34 → mem_addr=0x34
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x34)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x34
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x38
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x38)
+⏳ Waiting for ADDI writeback to complete...
+  Cycle 210: PC=0x00000038, x1=0x0000000c, x2=0x00000003, x3=0x00000000
+🔍 Validating instruction at PC=0x38 (after completion, aluBusy=0):
+  ✅ [13] ADDI: addi x1, x1, 7 -> x1 = 12 (5+7)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x38 → mem_addr=0x38
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x38)
+  📖 Memory read: addr=0x00000038 (word=14), data=0xfff10113
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x38
+  🔍 DECODE: mem_rdata=0xfff10113
+  🔍 DECODE: Found 0xFFF10113, instr=0x3ffc4044
+  🔍 DECODE: instr[29]=1, instr[28:18]=0x7ff
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=2, rs1Id=2, rs2Id=31
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 IMMEDIATE: Found 0xFFF10113, Iimm=0xffffffff (should be -1)
+  🔍 ALU: aluIn1=0x3 (x2=3)
+  🔍 ALU: aluIn2=0xffffffff (Iimm=-1)
+  🔍 ALU: aluPlus=0x2 (should be 2)
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x38
+  🔍 MEM_ADDR: Instruction fetch, PC=0x38 → mem_addr=0x38
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x38
+  🔍 DECODE: mem_rdata=0xfff10113
+  🔍 DECODE: Found 0xFFF10113, instr=0x3ffc4044
+  🔍 DECODE: instr[29]=1, instr[28:18]=0x7ff
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=2, rs1Id=2, rs2Id=31
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 IMMEDIATE: Found 0xFFF10113, Iimm=0xffffffff (should be -1)
+  🔍 ALU: aluIn1=0x3 (x2=3)
+  🔍 ALU: aluIn2=0xffffffff (Iimm=-1)
+  🔍 ALU: aluPlus=0x2 (should be 2)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x38 → mem_addr=0x38
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x38)
+  Cycle 220: PC=0x00000038, x1=0x0000000c, x2=0x00000003, x3=0x00000000
+  🔍 IMMEDIATE: Found 0xFFF10113, Iimm=0xffffffff (should be -1)
+  🔍 ALU: aluIn1=0x3 (x2=3)
+  🔍 ALU: aluIn2=0xffffffff (Iimm=-1)
+  🔍 ALU: aluPlus=0x2 (should be 2)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x38
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x3c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x3c)
+⏳ Waiting for ADDI writeback to complete...
+🔍 Validating instruction at PC=0x3c (after completion, aluBusy=0):
+  ✅ [14] ADDI: addi x2, x2, -1 -> x2 = 2 (3-1)
+  🔍 IMMEDIATE: Found 0xFFF10113, Iimm=0xffffffff (should be -1)
+  🔍 ALU: aluIn1=0x3 (x2=3)
+  🔍 ALU: aluIn2=0xffffffff (Iimm=-1)
+  🔍 ALU: aluPlus=0x2 (should be 2)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x3c → mem_addr=0x3c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x3c)
+  📖 Memory read: addr=0x0000003c (word=15), data=0x00118193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x3c
+  🔍 DECODE: mem_rdata=0x118193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=3, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x3c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x3c → mem_addr=0x3c
+  Cycle 230: PC=0x0000003c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x3c
+  🔍 DECODE: mem_rdata=0x118193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=3, rs1Id=3, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x3c → mem_addr=0x3c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x3c)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x3c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x40
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x40)
+⏳ Waiting for ADDI writeback to complete...
+  Cycle 240: PC=0x00000040, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+🔍 Validating instruction at PC=0x40 (after completion, aluBusy=0):
+  ❌ [15] ADDI: addi x3, x3, 1 -> x3 = 11 (10+1)
+    Expected: 0xb, Got: 0x1
+  🔍 MEM_ADDR: Instruction fetch, PC=0x40 → mem_addr=0x40
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x40)
+  📖 Memory read: addr=0x00000040 (word=16), data=0x00c0a193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x40
+  🔍 DECODE: mem_rdata=0xc0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=12
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x40
+  🔍 MEM_ADDR: Instruction fetch, PC=0x40 → mem_addr=0x40
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x40
+  🔍 DECODE: mem_rdata=0xc0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=12
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x40 → mem_addr=0x40
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x40)
+  Cycle 250: PC=0x00000040, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+  🔍 PC UPDATE: state=EXECUTE, PC=0x40
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x44
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x44)
+⏳ Waiting for SLTI writeback to complete...
+🔍 Validating instruction at PC=0x44 (after completion, aluBusy=0):
+  ✅ [16] SLTI: slti x3, x1, 12 -> x3 = 0 (12<12)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x44 → mem_addr=0x44
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x44)
+  📖 Memory read: addr=0x00000044 (word=17), data=0x00d0a193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x44
+  🔍 DECODE: mem_rdata=0xd0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=13
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x44
+  🔍 MEM_ADDR: Instruction fetch, PC=0x44 → mem_addr=0x44
+  Cycle 260: PC=0x00000044, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x44
+  🔍 DECODE: mem_rdata=0xd0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=13
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x44 → mem_addr=0x44
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x44)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x44
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x48
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x48)
+⏳ Waiting for SLTI writeback to complete...
+  Cycle 270: PC=0x00000048, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+🔍 Validating instruction at PC=0x48 (after completion, aluBusy=0):
+  ✅ [17] SLTI: slti x3, x1, 13 -> x3 = 1 (12<13)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x48 → mem_addr=0x48
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x48)
+  📖 Memory read: addr=0x00000048 (word=18), data=0x00b0b193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x48
+  🔍 DECODE: mem_rdata=0xb0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=11
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x48
+  🔍 MEM_ADDR: Instruction fetch, PC=0x48 → mem_addr=0x48
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x48
+  🔍 DECODE: mem_rdata=0xb0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=11
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x48 → mem_addr=0x48
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x48)
+  Cycle 280: PC=0x00000048, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+  🔍 PC UPDATE: state=EXECUTE, PC=0x48
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x4c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x4c)
+⏳ Waiting for SLTIU writeback to complete...
+🔍 Validating instruction at PC=0x4c (after completion, aluBusy=0):
+  ✅ [18] SLTIU: sltiu x3, x1, 11 -> x3 = 0 (12<11 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4c → mem_addr=0x4c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x4c)
+  📖 Memory read: addr=0x0000004c (word=19), data=0x00d0b193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x4c
+  🔍 DECODE: mem_rdata=0xd0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=13
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x4c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4c → mem_addr=0x4c
+  Cycle 290: PC=0x0000004c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x4c
+  🔍 DECODE: mem_rdata=0xd0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=13
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x4c → mem_addr=0x4c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x4c)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x4c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x50
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x50)
+⏳ Waiting for SLTIU writeback to complete...
+  Cycle 300: PC=0x00000050, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+🔍 Validating instruction at PC=0x50 (after completion, aluBusy=0):
+  ✅ [19] SLTIU: sltiu x3, x1, 13 -> x3 = 1 (12<13 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x50 → mem_addr=0x50
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x50)
+  📖 Memory read: addr=0x00000050 (word=20), data=0x00f0c193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x50
+  🔍 DECODE: mem_rdata=0xf0c193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x50
+  🔍 MEM_ADDR: Instruction fetch, PC=0x50 → mem_addr=0x50
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x50
+  🔍 DECODE: mem_rdata=0xf0c193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x4
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x50 → mem_addr=0x50
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x50)
+  Cycle 310: PC=0x00000050, x1=0x0000000c, x2=0x00000002, x3=0x00000001
+  🔍 PC UPDATE: state=EXECUTE, PC=0x50
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x54
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x54)
+⏳ Waiting for XORI writeback to complete...
+🔍 Validating instruction at PC=0x54 (after completion, aluBusy=0):
+  ✅ [20] XORI: xori x3, x1, 15 -> x3 = 3 (12^15)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x54 → mem_addr=0x54
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x54)
+  📖 Memory read: addr=0x00000054 (word=21), data=0x00f0e193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x54
+  🔍 DECODE: mem_rdata=0xf0e193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x54
+  🔍 MEM_ADDR: Instruction fetch, PC=0x54 → mem_addr=0x54
+  Cycle 320: PC=0x00000054, x1=0x0000000c, x2=0x00000002, x3=0x00000003
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x54
+  🔍 DECODE: mem_rdata=0xf0e193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x6
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x54 → mem_addr=0x54
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x54)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x54
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x58
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x58)
+⏳ Waiting for ORI writeback to complete...
+  Cycle 330: PC=0x00000058, x1=0x0000000c, x2=0x00000002, x3=0x0000000f
+🔍 Validating instruction at PC=0x58 (after completion, aluBusy=0):
+  ✅ [21] ORI: ori x3, x1, 15 -> x3 = 15 (12|15)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x58 → mem_addr=0x58
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x58)
+  📖 Memory read: addr=0x00000058 (word=22), data=0x00f0f193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x58
+  🔍 DECODE: mem_rdata=0xf0f193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x58
+  🔍 MEM_ADDR: Instruction fetch, PC=0x58 → mem_addr=0x58
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x58
+  🔍 DECODE: mem_rdata=0xf0f193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x7
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=15
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x58 → mem_addr=0x58
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x58)
+  Cycle 340: PC=0x00000058, x1=0x0000000c, x2=0x00000002, x3=0x0000000f
+  🔍 PC UPDATE: state=EXECUTE, PC=0x58
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x5c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x5c)
+⏳ Waiting for ANDI writeback to complete...
+🔍 Validating instruction at PC=0x5c (after completion, aluBusy=0):
+  ✅ [22] ANDI: andi x3, x1, 15 -> x3 = 12 (12&15)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x5c → mem_addr=0x5c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x5c)
+  📖 Memory read: addr=0x0000005c (word=23), data=0x00109193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x5c
+  🔍 DECODE: mem_rdata=0x109193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x1
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x5c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x5c → mem_addr=0x5c
+  Cycle 350: PC=0x0000005c, x1=0x0000000c, x2=0x00000002, x3=0x0000000c
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x5c
+  🔍 DECODE: mem_rdata=0x109193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x1
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x5c → mem_addr=0x5c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x5c)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x5c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x60
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x60)
+⏳ Waiting for SLLI writeback to complete...
+  Cycle 360: PC=0x00000060, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x60 (after completion, aluBusy=1):
+  ❌ [23] SLLI: slli x3, x1, 1 -> x3 = 24 (12<<1)
+    Expected: 0x18, Got: 0x0
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x18
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x60)
+  Cycle 370: PC=0x00000060, x1=0x0000000c, x2=0x00000002, x3=0x00000018
+  🔍 MEM_ADDR: Instruction fetch, PC=0x60 → mem_addr=0xd
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x60)
+  📖 Memory read: addr=0x00000060 (word=24), data=0x0010d193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x60
+  🔍 DECODE: mem_rdata=0x10d193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x60
+  🔍 MEM_ADDR: Instruction fetch, PC=0x60 → mem_addr=0x60
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x60
+  🔍 DECODE: mem_rdata=0x10d193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x60 → mem_addr=0x60
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x60)
+  Cycle 380: PC=0x00000060, x1=0x0000000c, x2=0x00000002, x3=0x00000018
+  🔍 PC UPDATE: state=EXECUTE, PC=0x60
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x64
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x64)
+⏳ Waiting for SRLI writeback to complete...
+🔍 Validating instruction at PC=0x64 (after completion, aluBusy=1):
+  ❌ [24] SRLI: srli x3, x1, 1 -> x3 = 6 (12>>1)
+    Expected: 0x6, Got: 0x18
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x6
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  Cycle 390: PC=0x00000064, x1=0x0000000c, x2=0x00000002, x3=0x0000000c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x64)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x64 → mem_addr=0xd
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x64)
+  📖 Memory read: addr=0x00000064 (word=25), data=0x4010d193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x64
+  🔍 DECODE: mem_rdata=0x4010d193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x64
+  🔍 MEM_ADDR: Instruction fetch, PC=0x64 → mem_addr=0x64
+  Cycle 400: PC=0x00000064, x1=0x0000000c, x2=0x00000002, x3=0x00000006
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x64
+  🔍 DECODE: mem_rdata=0x4010d193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x64 → mem_addr=0x64
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x64)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x64
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x68
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x68)
+⏳ Waiting for SRAI writeback to complete...
+  Cycle 410: PC=0x00000068, x1=0x0000000c, x2=0x00000002, x3=0x00000006
+🔍 Validating instruction at PC=0x68 (after completion, aluBusy=1):
+  ✅ [25] SRAI: srai x3, x1, 1 -> x3 = 6 (12>>1, arithmetic)
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x6
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x68)
+  Cycle 420: PC=0x00000068, x1=0x0000000c, x2=0x00000002, x3=0x00000006
+  🔍 MEM_ADDR: Instruction fetch, PC=0x68 → mem_addr=0x40d
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x68)
+  📖 Memory read: addr=0x00000068 (word=26), data=0x002091b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x68
+  🔍 DECODE: mem_rdata=0x2091b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x1
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x68
+  🔍 MEM_ADDR: Instruction fetch, PC=0x68 → mem_addr=0x68
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x68
+  🔍 DECODE: mem_rdata=0x2091b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x1
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x68 → mem_addr=0x68
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x68)
+  Cycle 430: PC=0x00000068, x1=0x0000000c, x2=0x00000002, x3=0x00000006
+  🔍 PC UPDATE: state=EXECUTE, PC=0x68
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x6c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x6c)
+⏳ Waiting for SLL to complete...
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=2 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=1, aluReg=0x18
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  Cycle 440: PC=0x0000006c, x1=0x0000000c, x2=0x00000002, x3=0x0000000c
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x30
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+🔍 Validating instruction at PC=0x6c (after completion, aluBusy=0):
+  ❌ [26] SLL: sll x3, x1, x2 -> x3 = 48 (12<<2)
+    Expected: 0x30, Got: 0x18
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x6c)
+  Cycle 450: PC=0x0000006c, x1=0x0000000c, x2=0x00000002, x3=0x00000030
+  🔍 MEM_ADDR: Instruction fetch, PC=0x6c → mem_addr=0xe
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x6c)
+  📖 Memory read: addr=0x0000006c (word=27), data=0x0020d1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x6c
+  🔍 DECODE: mem_rdata=0x20d1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x6c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x6c → mem_addr=0x6c
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x6c
+  🔍 DECODE: mem_rdata=0x20d1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x6c → mem_addr=0x6c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x6c)
+  Cycle 460: PC=0x0000006c, x1=0x0000000c, x2=0x00000002, x3=0x00000030
+  🔍 PC UPDATE: state=EXECUTE, PC=0x6c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x70
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x70)
+⏳ Waiting for SRL to complete...
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=2 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=1, aluReg=0x6
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  Cycle 470: PC=0x00000070, x1=0x0000000c, x2=0x00000002, x3=0x0000000c
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x3
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+🔍 Validating instruction at PC=0x70 (after completion, aluBusy=0):
+  ❌ [27] SRL: srl x3, x1, x2 -> x3 = 3 (12>>2)
+    Expected: 0x3, Got: 0x6
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x70)
+  Cycle 480: PC=0x00000070, x1=0x0000000c, x2=0x00000002, x3=0x00000003
+  🔍 MEM_ADDR: Instruction fetch, PC=0x70 → mem_addr=0xe
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x70)
+  📖 Memory read: addr=0x00000070 (word=28), data=0x4020d1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x70
+  🔍 DECODE: mem_rdata=0x4020d1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x70
+  🔍 MEM_ADDR: Instruction fetch, PC=0x70 → mem_addr=0x70
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x70
+  🔍 DECODE: mem_rdata=0x4020d1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x70 → mem_addr=0x70
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x70)
+  Cycle 490: PC=0x00000070, x1=0x0000000c, x2=0x00000002, x3=0x00000003
+  🔍 PC UPDATE: state=EXECUTE, PC=0x70
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x74
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → WAIT_ALU_OR_MEM (needToWait=1)
+  🔄 State transition: 2 → 3 (PC=0x74)
+⏳ Waiting for SRA to complete...
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=2 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=1, aluReg=0x6
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+  Cycle 500: PC=0x00000074, x1=0x0000000c, x2=0x00000002, x3=0x0000000c
+  🔄 Clock process: reset=1
+  🔍 SHIFT: aluShamt=1 before shift
+  🔍 SHIFT: Shifted by 1, aluShamt=0, aluReg=0x3
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM staying (aluBusy=1, mem_rbusy=0, mem_wbusy=0)
+🔍 Validating instruction at PC=0x74 (after completion, aluBusy=0):
+  ❌ [28] SRA: sra x3, x1, x2 -> x3 = 3 (12>>2, arithmetic)
+    Expected: 0x3, Got: 0x6
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=3
+  🔄 WAIT_ALU_OR_MEM → FETCH_INSTR
+  🔄 State transition: 3 → 0 (PC=0x74)
+  Cycle 510: PC=0x00000074, x1=0x0000000c, x2=0x00000002, x3=0x00000003
+  🔍 MEM_ADDR: Instruction fetch, PC=0x74 → mem_addr=0x40e
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x74)
+  📖 Memory read: addr=0x00000074 (word=29), data=0x0020a1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x74
+  🔍 DECODE: mem_rdata=0x20a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x74
+  🔍 MEM_ADDR: Instruction fetch, PC=0x74 → mem_addr=0x74
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x74
+  🔍 DECODE: mem_rdata=0x20a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x74 → mem_addr=0x74
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x74)
+  Cycle 520: PC=0x00000074, x1=0x0000000c, x2=0x00000002, x3=0x00000003
+  🔍 PC UPDATE: state=EXECUTE, PC=0x74
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x78
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x78)
+⏳ Waiting for SLT writeback to complete...
+🔍 Validating instruction at PC=0x78 (after completion, aluBusy=0):
+  ✅ [29] SLT: slt x3, x1, x2 -> x3 = 0 (12<2)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x78 → mem_addr=0x78
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x78)
+  📖 Memory read: addr=0x00000078 (word=30), data=0x0020b1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x78
+  🔍 DECODE: mem_rdata=0x20b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x78
+  🔍 MEM_ADDR: Instruction fetch, PC=0x78 → mem_addr=0x78
+  Cycle 530: PC=0x00000078, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x78
+  🔍 DECODE: mem_rdata=0x20b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x78 → mem_addr=0x78
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x78)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x78
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x7c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x7c)
+⏳ Waiting for SLTU writeback to complete...
+  Cycle 540: PC=0x0000007c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x7c (after completion, aluBusy=0):
+  ✅ [30] SLTU: sltu x3, x1, x2 -> x3 = 0 (12<2 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x7c → mem_addr=0x7c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x7c)
+  📖 Memory read: addr=0x0000007c (word=31), data=0x0010a1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x7c
+  🔍 DECODE: mem_rdata=0x10a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x7c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x7c → mem_addr=0x7c
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x7c
+  🔍 DECODE: mem_rdata=0x10a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x7c → mem_addr=0x7c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x7c)
+  Cycle 550: PC=0x0000007c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x7c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x80
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x80)
+⏳ Waiting for SLT writeback to complete...
+🔍 Validating instruction at PC=0x80 (after completion, aluBusy=0):
+  ✅ [31] SLT: slt x3, x1, x1 -> x3 = 0 (5<5)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x80 → mem_addr=0x80
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x80)
+  📖 Memory read: addr=0x00000080 (word=32), data=0x0020a1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x80
+  🔍 DECODE: mem_rdata=0x20a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x80
+  🔍 MEM_ADDR: Instruction fetch, PC=0x80 → mem_addr=0x80
+  Cycle 560: PC=0x00000080, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x80
+  🔍 DECODE: mem_rdata=0x20a1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x80 → mem_addr=0x80
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x80)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x80
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x84
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x84)
+⏳ Waiting for SLT writeback to complete...
+  Cycle 570: PC=0x00000084, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x84 (after completion, aluBusy=0):
+  ✅ [32] SLT: slt x3, x1, x2 -> x3 = 0 (5<3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x84 → mem_addr=0x84
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x84)
+  📖 Memory read: addr=0x00000084 (word=33), data=0x0010b1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x84
+  🔍 DECODE: mem_rdata=0x10b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x84
+  🔍 MEM_ADDR: Instruction fetch, PC=0x84 → mem_addr=0x84
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x84
+  🔍 DECODE: mem_rdata=0x10b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=1
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x84 → mem_addr=0x84
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x84)
+  Cycle 580: PC=0x00000084, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x84
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x88
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x88)
+⏳ Waiting for SLTU writeback to complete...
+🔍 Validating instruction at PC=0x88 (after completion, aluBusy=0):
+  ✅ [33] SLTU: sltu x3, x1, x1 -> x3 = 0 (5<5 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x88 → mem_addr=0x88
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x88)
+  📖 Memory read: addr=0x00000088 (word=34), data=0x0020b1b3
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x88
+  🔍 DECODE: mem_rdata=0x20b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x88
+  🔍 MEM_ADDR: Instruction fetch, PC=0x88 → mem_addr=0x88
+  Cycle 590: PC=0x00000088, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x88
+  🔍 DECODE: mem_rdata=0x20b1b3
+  🔍 DECODE: opcode=0x33
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=2
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x88 → mem_addr=0x88
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x88)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x88
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x8c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x8c)
+⏳ Waiting for SLTU writeback to complete...
+  Cycle 600: PC=0x0000008c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x8c (after completion, aluBusy=0):
+  ✅ [34] SLTU: sltu x3, x1, x2 -> x3 = 0 (5<3 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8c → mem_addr=0x8c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x8c)
+  📖 Memory read: addr=0x0000008c (word=35), data=0x00a0a193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x8c
+  🔍 DECODE: mem_rdata=0xa0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x8c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8c → mem_addr=0x8c
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x8c
+  🔍 DECODE: mem_rdata=0xa0a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x8c → mem_addr=0x8c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x8c)
+  Cycle 610: PC=0x0000008c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x8c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x90
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x90)
+⏳ Waiting for SLTI writeback to complete...
+🔍 Validating instruction at PC=0x90 (after completion, aluBusy=0):
+  ✅ [35] SLTI: slti x3, x1, 10 -> x3 = 0 (12<10)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x90 → mem_addr=0x90
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x90)
+  📖 Memory read: addr=0x00000090 (word=36), data=0x0030a193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x90
+  🔍 DECODE: mem_rdata=0x30a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x90
+  🔍 MEM_ADDR: Instruction fetch, PC=0x90 → mem_addr=0x90
+  Cycle 620: PC=0x00000090, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x90
+  🔍 DECODE: mem_rdata=0x30a193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x2
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x90 → mem_addr=0x90
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x90)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x90
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x94
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x94)
+⏳ Waiting for SLTI writeback to complete...
+  Cycle 630: PC=0x00000094, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x94 (after completion, aluBusy=0):
+  ✅ [36] SLTI: slti x3, x1, 3 -> x3 = 0 (12<3)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x94 → mem_addr=0x94
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x94)
+  📖 Memory read: addr=0x00000094 (word=37), data=0x00a0b193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x94
+  🔍 DECODE: mem_rdata=0xa0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x94
+  🔍 MEM_ADDR: Instruction fetch, PC=0x94 → mem_addr=0x94
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x94
+  🔍 DECODE: mem_rdata=0xa0b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=10
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x94 → mem_addr=0x94
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x94)
+  Cycle 640: PC=0x00000094, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x94
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x98
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x98)
+⏳ Waiting for SLTIU writeback to complete...
+🔍 Validating instruction at PC=0x98 (after completion, aluBusy=0):
+  ✅ [37] SLTIU: sltiu x3, x1, 10 -> x3 = 0 (12<10 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x98 → mem_addr=0x98
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x98)
+  📖 Memory read: addr=0x00000098 (word=38), data=0x0030b193
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x98
+  🔍 DECODE: mem_rdata=0x30b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x98
+  🔍 MEM_ADDR: Instruction fetch, PC=0x98 → mem_addr=0x98
+  Cycle 650: PC=0x00000098, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x98
+  🔍 DECODE: mem_rdata=0x30b193
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x3
+  🔍 DECODE: rdId=3, rs1Id=1, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x98 → mem_addr=0x98
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x98)
+  🔍 PC UPDATE: state=EXECUTE, PC=0x98
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0x9c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0x9c)
+⏳ Waiting for SLTIU writeback to complete...
+  Cycle 660: PC=0x0000009c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0x9c (after completion, aluBusy=0):
+  ✅ [38] SLTIU: sltiu x3, x1, 3 -> x3 = 0 (12<3 unsigned)
+  🔍 MEM_ADDR: Instruction fetch, PC=0x9c → mem_addr=0x9c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0x9c)
+  📖 Memory read: addr=0x0000009c (word=39), data=0x123450b7
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x9c
+  🔍 DECODE: mem_rdata=0x123450b7
+  🔍 DECODE: opcode=0x37
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=1, rs1Id=8, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0x9c
+  🔍 MEM_ADDR: Instruction fetch, PC=0x9c → mem_addr=0x9c
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0x9c
+  🔍 DECODE: mem_rdata=0x123450b7
+  🔍 DECODE: opcode=0x37
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=1, rs1Id=8, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0x9c → mem_addr=0x9c
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0x9c)
+  Cycle 670: PC=0x0000009c, x1=0x0000000c, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0x9c
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xa0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xa0)
+⏳ Waiting for LUI writeback to complete...
+🔍 Validating instruction at PC=0xa0 (after completion, aluBusy=0):
+  ✅ [39] LUI: lui x1, 0x12345 -> x1 = 0x12345000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa0 → mem_addr=0xa0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xa0)
+  📖 Memory read: addr=0x000000a0 (word=40), data=0x00008097
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa0
+  🔍 DECODE: mem_rdata=0x8097
+  🔍 DECODE: opcode=0x17
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xa0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa0 → mem_addr=0xa0
+  Cycle 680: PC=0x000000a0, x1=0x12345000, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa0
+  🔍 DECODE: mem_rdata=0x8097
+  🔍 DECODE: opcode=0x17
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa0 → mem_addr=0xa0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xa0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xa0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xa4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xa4)
+⏳ Waiting for AUIPC writeback to complete...
+  Cycle 690: PC=0x000000a4, x1=0x000080a0, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0xa4 (after completion, aluBusy=0):
+  ❌ [40] AUIPC: auipc x1, 0 -> x1 = PC + 0
+    Expected: 0x0, Got: 0x80a0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa4 → mem_addr=0xa4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xa4)
+  📖 Memory read: addr=0x000000a4 (word=41), data=0x123456b7
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa4
+  🔍 DECODE: mem_rdata=0x123456b7
+  🔍 DECODE: opcode=0x37
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=13, rs1Id=8, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xa4
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa4 → mem_addr=0xa4
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa4
+  🔍 DECODE: mem_rdata=0x123456b7
+  🔍 DECODE: opcode=0x37
+  🔍 DECODE: funct3=0x5
+  🔍 DECODE: rdId=13, rs1Id=8, rs2Id=3
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa4 → mem_addr=0xa4
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xa4)
+  Cycle 700: PC=0x000000a4, x1=0x000080a0, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xa4
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xa8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xa8)
+⏳ Waiting for LUI writeback to complete...
+🔍 Validating instruction at PC=0xa8 (after completion, aluBusy=0):
+  ❌ [41] LUI: lui x5, 0x12345 -> x5 = 0x12345000
+    Expected: 0x12345000, Got: 0x0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa8 → mem_addr=0xa8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xa8)
+  📖 Memory read: addr=0x000000a8 (word=42), data=0x67808093
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa8
+  🔍 DECODE: mem_rdata=0x67808093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=24
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xa8
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa8 → mem_addr=0xa8
+  Cycle 710: PC=0x000000a8, x1=0x000080a0, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xa8
+  🔍 DECODE: mem_rdata=0x67808093
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=1, rs1Id=1, rs2Id=24
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xa8 → mem_addr=0xa8
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xa8)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xa8
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xac
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xac)
+⏳ Waiting for ADDI writeback to complete...
+  Cycle 720: PC=0x000000ac, x1=0x00008718, x2=0x00000002, x3=0x00000000
+🔍 Validating instruction at PC=0xac (after completion, aluBusy=0):
+  ❌ [42] ADDI: addi x1, x1, 0x678 -> x1 = 0x12345678
+    Expected: 0x12345678, Got: 0x8718
+  🔍 MEM_ADDR: Instruction fetch, PC=0xac → mem_addr=0xac
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xac)
+  📖 Memory read: addr=0x000000ac (word=43), data=0x00008293
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xac
+  🔍 DECODE: mem_rdata=0x8293
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=5, rs1Id=1, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xac
+  🔍 MEM_ADDR: Instruction fetch, PC=0xac → mem_addr=0xac
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xac
+  🔍 DECODE: mem_rdata=0x8293
+  🔍 DECODE: opcode=0x13
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=5, rs1Id=1, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=1, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xac → mem_addr=0xac
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xac)
+  Cycle 730: PC=0x000000ac, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xac
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=0
+  🔍 PC UPDATE: PC+4 → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+⏳ Waiting for ADDI writeback to complete...
+🔍 Validating instruction at PC=0xb0 (after completion, aluBusy=0):
+  ❌ [43] ADDI: addi x5, x1, 0 -> x5 = 0x12345678 (final result)
+    Expected: 0x12345678, Got: 0x8718
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  Cycle 740: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 750: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 760: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 770: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 780: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 790: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 800: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 810: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 820: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 830: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 840: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 850: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 860: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 870: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 880: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 890: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 900: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 910: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 920: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 930: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 940: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 950: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 960: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 970: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 980: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 990: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1000: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1010: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1020: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1030: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1040: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1050: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1060: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1070: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1080: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1090: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1100: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1110: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1120: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1130: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1140: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1150: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1160: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1170: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1180: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1190: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1200: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1210: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1220: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1230: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1240: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1250: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1260: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1270: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1280: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1290: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1300: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1310: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1320: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1330: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1340: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1350: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1360: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1370: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1380: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1390: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1400: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1410: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1420: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1430: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1440: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1450: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1460: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  Cycle 1470: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+  Cycle 1480: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 PC UPDATE: state=EXECUTE, PC=0xb0
+  🔍 PC UPDATE: isJALR=0, jumpToPCplusImm=1
+  🔍 PC UPDATE: JUMP → PC=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=2
+  🔄 EXECUTE → FETCH_INSTR (needToWait=0)
+  🔄 State transition: 2 → 0 (PC=0xb0)
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=0
+  🔄 FETCH_INSTR → WAIT_INSTR
+  🔄 State transition: 0 → 1 (PC=0xb0)
+  📖 Memory read: addr=0x000000b0 (word=44), data=0x0000006f
+  Cycle 1490: PC=0x000000b0, x1=0x00008718, x2=0x00000002, x3=0x00000000
+  🔍 DECODE: Loading instruction from memory
+  🔍 DECODE: PC=0xb0
+  🔍 DECODE: mem_rdata=0x6f
+  🔍 DECODE: opcode=0x6f
+  🔍 DECODE: funct3=0x0
+  🔍 DECODE: rdId=0, rs1Id=0, rs2Id=0
+  🔍 DECODE: isLoad=0, isALU=0, isStore=0
+  🔍 MEM_RSTRB: Requesting memory read, state=1, isLoad=0, mem_addr=0xb0
+  🔍 MEM_ADDR: Instruction fetch, PC=0xb0 → mem_addr=0xb0
+  🔄 Clock process: reset=1
+  🔄 Clock process: calling update_state(), current state=1
+  🔄 WAIT_INSTR → EXECUTE (mem_rbusy=0)
+  🔄 State transition: 1 → 2 (PC=0xb0)
+📊 Real-time Validation Summary: 34/45 instructions passed
+✅ Simulation completed
+🏁 Final CPU State (after 1500 cycles):
+=== CPU State ===
+PC: 0x000000b0
+x1: 0x00008718
+x2: 0x00000002
+x3: 0x00000000
+x4: 0x00000000
+x5: 0x00008718
+
+📊 Final Validation Summary:
+  Final Result: ❌ FAIL
+❌ FAIL: Expected 0x12345678, got 0x8718
+
+=== Test Suite Summary ===
+Total Tests: 1
+Passed: 0
+Failed: 1
+Success Rate: 0.0%
+
+❌ Some tests failed. Check the output above for details.

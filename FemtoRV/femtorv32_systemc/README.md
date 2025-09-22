@@ -1,87 +1,142 @@
-# FemtoRV32 SystemC Implementation
+# FemtoRV32 Quark SystemC Implementation
 
-A production-quality SystemC translation of the FemtoRV32 RISC-V processor, designed for Qualcomm interview preparation.
+This directory contains a SystemC C++ translation of the FemtoRV32 Quark processor, which is the most elementary version of the FemtoRV32 RISC-V core.
 
 ## Overview
 
-This project implements a complete RISC-V processor in SystemC, based on the FemtoRV32 Verilog implementation. It features:
+The FemtoRV32 Quark is a minimal RISC-V RV32I processor implementation that fits in a single Verilog file. This SystemC translation maintains the same functionality and structure while providing a C++ simulation environment.
 
-- **RV32IMC Instruction Set**: Complete RISC-V 32-bit Integer, Multiply, and Compressed instruction support
-- **Interrupt Support**: Full interrupt handling with CSR registers
-- **Compressed Instructions**: RISC-V compressed instruction set (16-bit instructions)
-- **Memory-Mapped I/O**: Configurable memory interface with I/O devices
-- **Production Quality**: Comprehensive error handling, documentation, and testing
+## Features
 
-## Architecture
+- **Instruction Set**: RV32I + RDCYCLES (cycle counter)
+- **Architecture**: Single-cycle with multi-cycle shifts
+- **Memory Interface**: 32-bit word-aligned memory access
+- **Register File**: 32 registers (x0-x31)
+- **State Machine**: 4-state execution model
 
-The implementation consists of several SystemC modules:
+## Files
 
-- **FemtoRV32Core**: Main processor core integrating all components
-- **RegisterFile**: 32-register RISC-V register file
-- **ALU**: Arithmetic Logic Unit with multiplication/division support
-- **InstructionDecoder**: Instruction decoding for RV32IMC
-- **CompressedInstructionDecoder**: 16-bit compressed instruction decompression
-- **CSRRegisters**: Control and Status Registers for interrupt handling
-- **MemoryInterface**: Memory and I/O interface
-- **Testbench**: Comprehensive test suite
+- `femtorv32_quark.h` - Main processor header file
+- `femtorv32_quark.cpp` - Processor implementation
+- `testbench.h` - Testbench header
+- `testbench.cpp` - Testbench implementation with simple memory model
+- `main.cpp` - Main simulation entry point
+- `Makefile` - Build configuration
+- `README.md` - This file
 
 ## Building
 
 ### Prerequisites
 
-- SystemC 2.3.3 or later
-- GCC 4.8+ with C++11 support
+- SystemC library (included in `systemc-install/`)
+- GCC with C++11 support
 - Make
 
-### Installation
+### Build Commands
 
-1. Install SystemC dependencies:
 ```bash
-make install-deps
-```
-
-2. Build SystemC (if not already installed):
-```bash
-make build-systemc
-```
-
-3. Build the project:
-```bash
+# Build the simulation
 make
-```
 
-### Running
-
-Run the simulation:
-```bash
+# Build and run
 make run
+
+# Clean build artifacts
+make clean
+
+# Build with debug symbols
+make debug
 ```
 
-Run with Valgrind for memory checking:
+## Running the Simulation
+
+The simulation includes a simple test program that:
+1. Loads immediate value 5 into register x1
+2. Loads immediate value 3 into register x2
+3. Adds x1 + x2 and stores result in x3
+4. Enters an infinite loop
+
 ```bash
-make valgrind
+./femtorv32_quark_sim
 ```
 
-Run the test suite:
-```bash
-make test
-```
+The simulation will:
+- Run for 1000 cycles
+- Print CPU state every 100 cycles
+- Generate a VCD trace file (`femtorv32_quark.vcd`)
+
+## Architecture Details
+
+### State Machine
+
+The processor uses a 4-state execution model:
+
+1. **FETCH_INSTR**: Request instruction from memory
+2. **WAIT_INSTR**: Wait for instruction to be available
+3. **EXECUTE**: Execute the instruction
+4. **WAIT_ALU_OR_MEM**: Wait for ALU shifts or memory operations
+
+### ALU Operations
+
+The ALU supports all RV32I operations:
+- Arithmetic: ADD, SUB, ADDI
+- Logical: AND, OR, XOR, ANDI, ORI, XORI
+- Comparison: SLT, SLTU, SLTI, SLTIU
+- Shifts: SLL, SRL, SRA, SLLI, SRLI, SRAI
+
+### Memory Interface
+
+- 32-bit word-aligned memory access
+- Support for byte and halfword load/store operations
+- Write mask support for partial word writes
+
+### Register File
+
+- 32 registers (x0-x31)
+- x0 is hardwired to zero
+- Register updates occur on write-back
+
+## Key Differences from Verilog
+
+1. **Process Model**: Uses SystemC SC_METHOD processes instead of always blocks
+2. **Signal Types**: Uses SystemC signal types (sc_signal, sc_uint, etc.)
+3. **Memory Model**: Includes a simple memory model in the testbench
+4. **Debugging**: Enhanced debugging capabilities with state monitoring
+
+## Customization
+
+### Parameters
+
+- `RESET_ADDR`: Reset address (default: 0x00000000)
+- `ADDR_WIDTH`: Address bus width (default: 24)
+
+### Macros
+
+- `NRV_TWOLEVEL_SHIFTER`: Enable two-level shifter for faster shifts
+- `NRV_COUNTER_WIDTH`: Reduce cycle counter width for space-constrained designs
+- `NRV_IS_IO_ADDR`: Define custom I/O address space
 
 ## Testing
 
-The implementation includes a comprehensive test suite:
+The included testbench provides:
+- Simple memory model
+- Basic test program
+- State monitoring
+- VCD trace generation
 
-- **Instruction Tests**: Tests for all instruction types
-- **Memory Tests**: Load/store operation testing
-- **Interrupt Tests**: Interrupt handling verification
-- **Performance Tests**: Timing and performance measurements
+For more comprehensive testing, you can:
+- Add more test programs to the memory
+- Implement a more sophisticated memory model
+- Add instruction-level debugging
+- Create regression test suites
 
-## Interview Preparation
+## Performance
 
-This implementation demonstrates:
+The SystemC implementation is designed for functional verification and simulation. For performance-critical applications, consider:
+- Using the original Verilog implementation
+- Optimizing the SystemC code for faster simulation
+- Using commercial SystemC simulators
 
-- **SystemC Expertise**: Advanced SystemC modeling techniques
-- **RISC-V Knowledge**: Deep understanding of RISC-V architecture
-- **Processor Design**: Complete processor implementation
-- **Testing Skills**: Comprehensive test suite development
-- **Code Quality**: Production-ready code standards
+## License
+
+This SystemC translation maintains the same license as the original FemtoRV32 project.
