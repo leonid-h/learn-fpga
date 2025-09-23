@@ -69,13 +69,3 @@ help:
 	@echo "Note: All warnings are treated as errors (-Werror flag enabled)"
 
 .PHONY: all clean test simple-branch-test debug debug-run help
-
-# Run the focused validation test (alias for test)
-focused-test: $(FOCUSED_TEST_TARGET)
-	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH ./tests/focused_test
-
-# Debug run for focused test
-focused-debug: clean
-	$(MAKE) CXXFLAGS="$(CXXFLAGS) -g -DDEBUG" $(FOCUSED_TEST_TARGET)
-	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH gdb ./tests/focused_test
-
