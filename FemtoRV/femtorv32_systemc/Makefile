@@ -55,6 +55,14 @@ debug: clean
 debug-run: debug
 	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH cgdb ./tests/focused_test
 
+# Run with Valgrind memory checker
+valgrind: $(FOCUSED_TEST_TARGET)
+	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./tests/focused_test
+
+# Run branch test with Valgrind
+valgrind-branch: $(SIMPLE_BRANCH_TEST_TARGET)
+	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./tests/simple_branch_test
+
 # Help target
 help:
 	@echo "Available targets:"
@@ -64,8 +72,10 @@ help:
 	@echo "  simple-branch-test - Build and run simple branch verification test"
 	@echo "  debug         - Build with debug symbols"
 	@echo "  debug-run     - Build with debug symbols and launch gdb"
+	@echo "  valgrind      - Run focused test with Valgrind memory checker"
+	@echo "  valgrind-branch - Run branch test with Valgrind memory checker"
 	@echo "  help          - Show this help message"
 	@echo ""
 	@echo "Note: All warnings are treated as errors (-Werror flag enabled)"
 
-.PHONY: all clean test simple-branch-test debug debug-run help
+.PHONY: all clean test simple-branch-test debug debug-run valgrind valgrind-branch help
