@@ -22,11 +22,6 @@
 #include <systemc.h>
 #include <vector>
 
-// Firmware generation flags for this processor
-#define NRV_ARCH     "rv32i"
-#define NRV_ABI      "ilp32"
-#define NRV_OPTIMIZE "-Os"
-
 // Default parameters
 #define DEFAULT_RESET_ADDR 0x00000000
 #define DEFAULT_ADDR_WIDTH 24

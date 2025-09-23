@@ -69,8 +69,17 @@ void FemtoRV32_Quark::clock_process() {
         }
         
         // Update register file
-        if (writeBack && rdId != 0) {
+        // Note: writeBack is computed in combinational_process, so we need to check it here
+        // The writeBack signal should be true when we're in EXECUTE or WAIT_ALU_OR_MEM states
+        // and the instruction is not a branch or store
+        bool shouldWriteBack = !(isBranch || isStore) && 
+                              (state == EXECUTE || state == WAIT_ALU_OR_MEM);
+        
+        if (shouldWriteBack && rdId != 0) {
             registerFile[rdId] = writeBackData;
+            #ifdef DEBUG
+            std::cout << "  🔍 REG WRITE: x" << rdId.to_uint() << " = 0x" << std::hex << writeBackData.to_uint() << std::dec << std::endl;
+            #endif
         }
         
         // State machine
