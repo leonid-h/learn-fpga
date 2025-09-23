@@ -247,17 +247,10 @@ void FemtoRV32_Quark::compute_immediates() {
     
     if ((opcode == 0x17 || opcode == 0x37) && instr_val < 0x10000) {
         // This is a truncated U-type instruction
-        // For AUIPC with immediate 0, the truncated instruction should have Uimm = 0
-        // For LUI, we need to reconstruct the immediate from the available bits
-        if (opcode == 0x17) {
-            // AUIPC: assume immediate was 0 (most common case)
-            Uimm = 0x00000000;
-        } else {
-            // LUI: reconstruct immediate from truncated instruction
-            // The truncated instruction has the immediate in the upper bits
-            uint32_t truncated_imm = (instr_val >> 12) & 0xF;
-            Uimm = truncated_imm << 12;
-        }
+        // For AUIPC and LUI, we need to reconstruct the immediate from the available bits
+        // The truncated instruction has the immediate in the upper bits
+        uint32_t truncated_imm = (instr_val >> 12) & 0xF;
+        Uimm = truncated_imm << 12;
     } else {
         // Normal U-type immediate calculation
         Uimm = (full_instr[31], full_instr.range(30, 12), sc_uint<12>(0));

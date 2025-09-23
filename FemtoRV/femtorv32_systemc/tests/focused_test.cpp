@@ -290,6 +290,18 @@ SimpleTestProgram create_focused_validation_test() {
         0x0020E1B3,  // or x3, x1, x2         -> x3 = 14 (12 | 2)
         0x0020F1B3,  // and x3, x1, x2        -> x3 = 0 (12 & 2)
         
+        // === MEMORY OPERATIONS ===
+        0x0000A023,  // sw x0, 0(x1)          -> store x0 (0) to memory[x1+0] = memory[12]
+        0x0000A103,  // lw x2, 0(x1)          -> load from memory[x1+0] = memory[12] to x2
+        0x0040A223,  // sw x4, 4(x1)          -> store x4 (0) to memory[x1+4] = memory[16]
+        0x0040A183,  // lw x3, 4(x1)          -> load from memory[x1+4] = memory[16] to x3
+        
+        // === AUIPC INSTRUCTIONS ===
+        0x00001117,  // auipc x2, 1           -> x2 = PC + (1 << 12) = 0x1000
+        0x00002197,  // auipc x3, 2           -> x3 = PC + (2 << 12) = 0x2000
+        
+        // === JALR INSTRUCTIONS ===
+        0x000080E7,  // jalr x1, 0(x1)        -> jump to x1+0 (PC+4), save return address in x1
         
         // === HALT ===
         0x0000006F   // jal x0, 0             -> jump to PC+0 (infinite loop to halt)
@@ -346,6 +358,18 @@ SimpleTestProgram create_focused_validation_test() {
         {"OR", 3, 14, "or x3, x1, x2 -> x3 = 14 (12 | 2)"},
         {"AND", 3, 0, "and x3, x1, x2 -> x3 = 0 (12 & 2)"},
         
+        // === MEMORY OPERATIONS ===
+        {"SW", 0, 0, "sw x0, 0(x1) -> store x0 (0) to memory[12]"},
+        {"LW", 2, 0, "lw x2, 0(x1) -> load from memory[12] to x2"},
+        {"SW", 4, 0, "sw x4, 4(x1) -> store x4 (0) to memory[16]"},
+        {"LW", 3, 0, "lw x3, 4(x1) -> load from memory[16] to x3"},
+        
+        // === AUIPC INSTRUCTIONS ===
+        {"AUIPC", 2, 0x1094, "auipc x2, 1 -> x2 = PC + (1 << 12) = 0x94 + 0x1000 = 0x1094"},
+        {"AUIPC", 3, 0x2098, "auipc x3, 2 -> x3 = PC + (2 << 12) = 0x98 + 0x2000 = 0x2098"},
+        
+        // === JALR INSTRUCTIONS ===
+        {"JALR", 1, 0xa0, "jalr x1, 0(x1) -> jump to x1+0, save return address in x1"},
         
         // === HALT ===
         {"JAL", 0, 0, "jal x0, 0 -> jump to PC+0 (infinite loop)"}
