@@ -16,6 +16,10 @@ FOCUSED_TEST_SOURCES = tests/focused_test.cpp femtorv32_quark.cpp
 FOCUSED_TEST_OBJECTS = $(FOCUSED_TEST_SOURCES:.cpp=.o)
 FOCUSED_TEST_TARGET = tests/focused_test
 
+SIMPLE_BRANCH_TEST_SOURCES = tests/simple_branch_test.cpp femtorv32_quark.cpp
+SIMPLE_BRANCH_TEST_OBJECTS = $(SIMPLE_BRANCH_TEST_SOURCES:.cpp=.o)
+SIMPLE_BRANCH_TEST_TARGET = tests/simple_branch_test
+
 # Default target
 all: $(FOCUSED_TEST_TARGET)
 
@@ -23,17 +27,25 @@ all: $(FOCUSED_TEST_TARGET)
 $(FOCUSED_TEST_TARGET): $(FOCUSED_TEST_OBJECTS)
 	$(CXX) $(FOCUSED_TEST_OBJECTS) -o $(FOCUSED_TEST_TARGET) $(LDFLAGS)
 
+# Build the simple branch test executable
+$(SIMPLE_BRANCH_TEST_TARGET): $(SIMPLE_BRANCH_TEST_OBJECTS)
+	$(CXX) $(SIMPLE_BRANCH_TEST_OBJECTS) -o $(SIMPLE_BRANCH_TEST_TARGET) $(LDFLAGS)
+
 # Compile source files
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 # Clean build artifacts
 clean:
-	rm -f $(FOCUSED_TEST_OBJECTS) $(FOCUSED_TEST_TARGET) *.vcd
+	rm -f $(FOCUSED_TEST_OBJECTS) $(FOCUSED_TEST_TARGET) $(SIMPLE_BRANCH_TEST_OBJECTS) $(SIMPLE_BRANCH_TEST_TARGET) *.vcd
 
 # Run the comprehensive assembly instruction tests
 test: $(FOCUSED_TEST_TARGET)
 	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH ./tests/focused_test
+
+# Run the simple branch test
+simple-branch-test: $(SIMPLE_BRANCH_TEST_TARGET)
+	LD_LIBRARY_PATH=./systemc-install/lib:$$LD_LIBRARY_PATH ./tests/simple_branch_test
 
 # Debug build
 debug: clean
@@ -49,13 +61,14 @@ help:
 	@echo "  all           - Build the test suite (default)"
 	@echo "  clean         - Remove build artifacts"
 	@echo "  test          - Build and run comprehensive assembly instruction tests"
+	@echo "  simple-branch-test - Build and run simple branch verification test"
 	@echo "  debug         - Build with debug symbols"
 	@echo "  debug-run     - Build with debug symbols and launch gdb"
 	@echo "  help          - Show this help message"
 	@echo ""
 	@echo "Note: All warnings are treated as errors (-Werror flag enabled)"
 
-.PHONY: all clean test debug debug-run help
+.PHONY: all clean test simple-branch-test debug debug-run help
 
 # Run the focused validation test (alias for test)
 focused-test: $(FOCUSED_TEST_TARGET)
